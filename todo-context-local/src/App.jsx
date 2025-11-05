@@ -32,16 +32,18 @@ function App() {
   };
 
   useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem("todos"));
+    const todos = JSON.parse(localStorage.getItem("Localtodos"));
 
     if (todos && todos.length > 0) {
       setTodos(todos);
     }
-  }, []);
+    
+  }, [])
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem("Localtodos", JSON.stringify(todos))
+  }, [todos])
+
 
   return (
     <TodoProvider
